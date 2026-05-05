@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Alarm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⏰ Simple Alarm</h1>
+      <div id="clock" class="clock"></div>
+    </header>
+
+    <section class="add-alarm">
+      <div class="input-row">
+        <input type="time" id="alarmTime" />
+        <input type="text" id="alarmLabel" placeholder="ラベル（任意）" maxlength="30" />
+        <button id="addBtn" onclick="addAlarm()">追加</button>
+      </div>
+    </section>
+
+    <section class="alarm-list">
+      <p id="emptyMsg" class="empty-msg">アラームがありません</p>
+      <ul id="alarmItems"></ul>
+    </section>
+  </div>
+
+  <div id="ringModal" class="modal hidden">
+    <div class="modal-box">
+      <div class="bell">🔔</div>
+      <p id="ringLabel" class="ring-label"></p>
+      <p id="ringTime" class="ring-time"></p>
+      <button onclick="dismissAlarm()">止める</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
