@@ -3,36 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Alarm</title>
+  <title>ランダムポケモン</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>⏰ Simple Alarm</h1>
-      <div id="clock" class="clock"></div>
-    </header>
+  <div id="app" class="app">
+    <p class="hint" id="hint">クリックしてポケモンを表示</p>
 
-    <section class="add-alarm">
-      <div class="input-row">
-        <input type="time" id="alarmTime" />
-        <input type="text" id="alarmLabel" placeholder="ラベル（任意）" maxlength="30" />
-        <button id="addBtn" onclick="addAlarm()">追加</button>
+    <div class="card hidden" id="card">
+      <div class="card-header">
+        <span class="pokemon-id" id="pokemonId"></span>
+        <div class="types" id="types"></div>
       </div>
-    </section>
+      <img class="sprite" id="sprite" alt="" />
+      <h1 class="pokemon-name" id="pokemonName"></h1>
+      <div class="stats" id="stats"></div>
+      <div class="meta" id="meta"></div>
+    </div>
 
-    <section class="alarm-list">
-      <p id="emptyMsg" class="empty-msg">アラームがありません</p>
-      <ul id="alarmItems"></ul>
-    </section>
-  </div>
-
-  <div id="ringModal" class="modal hidden">
-    <div class="modal-box">
-      <div class="bell">🔔</div>
-      <p id="ringLabel" class="ring-label"></p>
-      <p id="ringTime" class="ring-time"></p>
-      <button onclick="dismissAlarm()">止める</button>
+    <div class="loader hidden" id="loader">
+      <div class="pokeball">
+        <div class="pokeball-top"></div>
+        <div class="pokeball-middle"></div>
+        <div class="pokeball-bottom"></div>
+      </div>
     </div>
   </div>
 
